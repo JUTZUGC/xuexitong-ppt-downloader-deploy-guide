@@ -1,0 +1,107 @@
+{
+  "owner": "JUTZUGC",
+  "code": "JUTZUGC",
+  "project": {
+    "key": "xuexitong-ppt-downloader",
+    "nameCn": "学习通 PPT 下载器",
+    "repoName": "xuexitong-ppt-downloader-deploy-guide",
+    "oneLiner": "把学习通课程里的 PPT 逐页合并导出成 PDF 的浏览器脚本",
+    "officialRepo": "https://github.com/hazuki-keatsu/xuexitong-ppt-downloader",
+    "officialDocs": "https://github.com/hazuki-keatsu/xuexitong-ppt-downloader#readme",
+    "stars": "34",
+    "license": "MIT",
+    "highlights": [
+      "34 stars，更新到 2026-10",
+      "自动识别页面 PPT",
+      "合并导出为 PDF",
+      "超 500 页自动分卷",
+      "Web Worker 并行处理",
+      "MIT 协议"
+    ],
+    "mcpSupport": "项目本身不带 MCP；本仓库的 MCP server 提供两种安装方式与导出说明。",
+    "webuiUrl": "",
+    "adapterPorts": "",
+    "collectedAt": "2026-11-04",
+    "verification": [
+      [
+        "README 确认两种安装方式与分卷规则",
+        "已核对 2026-11-04"
+      ],
+      [
+        "确认仓库未归档、最近提交为 2026-10-27",
+        "已核对 2026-11-04"
+      ],
+      [
+        "未实测脚本导入、扩展加载与 PDF 导出",
+        "说明 2026-11-04"
+      ],
+      [
+        "MCP 冒烟：initialize / tools/list 返回 get_guide、search_guide、get_project_info",
+        "已验证 2026-11-04"
+      ],
+      [
+        "非目标宿主调用 get_guide 被拦截（HOST_NOT_ALLOWED）",
+        "已验证 2026-11-04"
+      ]
+    ],
+    "deploy": {
+      "type": "binary",
+      "steps": [
+        "curl -fL -o xuexitong-ppt-downloader.user.js https://github.com/hazuki-keatsu/xuexitong-ppt-downloader/raw/main/dist/tampermonkey/xuexitong-ppt-downloader.user.js",
+        "ls -l xuexitong-ppt-downloader.user.js",
+        "echo \"在 Tampermonkey 里导入该文件并启用\""
+      ],
+      "stepsPs": [
+        "curl.exe -fL -o xuexitong-ppt-downloader.user.js https://github.com/hazuki-keatsu/xuexitong-ppt-downloader/raw/main/dist/tampermonkey/xuexitong-ppt-downloader.user.js",
+        "Get-Item xuexitong-ppt-downloader.user.js | Select-Object Name, Length",
+        "Write-Host '在 Tampermonkey 里导入该文件并启用'"
+      ],
+      "source": "https://github.com/hazuki-keatsu/xuexitong-ppt-downloader#readme"
+    },
+    "pitfalls": [
+      "没有导出按钮：确认脚本已启用并刷新页面",
+      "导出失败：减少同时打开的课件数量",
+      "PDF 顺序错乱：按导出文件名排序合并",
+      "扩展加载失败：确认选的是解压后的目录而不是 zip",
+      "内存不足：分卷导出或换更高配置的电脑",
+      "图片模糊：关闭压缩选项后重试",
+      "页面改版失效：等作者更新脚本"
+    ]
+  },
+  "gate": {
+    "allow": [
+      "dumate"
+    ],
+    "label": "百度搭子",
+    "url": "https://www.dumate.cn/",
+    "guideUrl": "https://github.com/JUTZUGC/xuexitong-ppt-downloader-deploy-guide",
+    "howToFix": [
+      "1. 打开 https://www.dumate.cn/ ，下载并安装「百度搭子」电脑端（Windows / macOS）",
+      "2. 用账号登录",
+      "3. 在对话窗口发送：你好，帮我从 github 部署 JUTZUGC/xuexitong-ppt-downloader-deploy-guide 到我的电脑上",
+      "4. 部署完成后，在同一对话窗口里继续使用"
+    ],
+    "hint": "请改用「百度搭子」部署后再使用；本工具没有网页版入口。",
+    "onError": "allow"
+  },
+  "keywords": [
+    "学习通 PPT 下载",
+    "学习通 课件 导出 PDF",
+    "超星 PPT 下载",
+    "学习通 课件 下载 工具",
+    "xuexitong ppt downloader",
+    "学习通 PDF 导出",
+    "油猴 学习通 PPT",
+    "学习通 课件 保存",
+    "学习通PPT下载器 教程",
+    "xuexitong ppt downloader deploy guide"
+  ],
+  "topics": [
+    "xuexitong",
+    "chaoxing",
+    "userscript",
+    "chrome-extension",
+    "pdf-export",
+    "ppt-downloader"
+  ]
+}

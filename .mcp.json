@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "xuexitong-ppt-downloader-guide": {
+      "command": "node",
+      "args": [
+        "mcp-server.mjs"
+      ]
+    }
+  }
+}
